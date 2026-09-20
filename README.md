@@ -40,6 +40,10 @@ export default definePlugin({
 
 `manifest.json`（id / name / version / permissions）を同じフォルダに置きます。
 
+現在利用できる権限は `messages:read`、`settings:read`、`settings:write` です。
+SDK に宣言できる権限は backend が実際に提供する capability と一致させており、
+未実装の送信・メディア・ネットワーク権限は受け付けません。
+
 ## インストール
 
 1. プラグインフォルダごと `Vyline/backend/data/plugins/` にコピー
