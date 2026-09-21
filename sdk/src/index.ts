@@ -10,18 +10,16 @@
  * この SDK は型のみを提供する。実行基盤は backend 側の plugin manager。
  */
 
-/** プラグインが要求できる権限。raw token / session / filesystem 等は意図的に含まない */
+/**
+ * プラグインが要求できる権限。
+ *
+ * ここに含める権限は backend の PluginContext が実際に提供・強制する
+ * capability と一致させる。未実装の権限を型だけで公開すると、プラグインは
+ * 有効化されたと誤認し、ランタイムでは黙って無視されるため許可しない。
+ * raw token / session / filesystem 等も意図的に含めない。
+ */
 export type PluginPermission =
   | "messages:read"
-  | "messages:send"
-  | "chats:read"
-  | "media:read"
-  | "media:write"
-  | "storage:read"
-  | "storage:write"
-  | "notifications:send"
-  | "ui:extend"
-  | "network:request"
   | "settings:read"
   | "settings:write";
 
