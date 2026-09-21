@@ -18,10 +18,7 @@
  * 有効化されたと誤認し、ランタイムでは黙って無視されるため許可しない。
  * raw token / session / filesystem 等も意図的に含めない。
  */
-export type PluginPermission =
-  | "messages:read"
-  | "settings:read"
-  | "settings:write";
+export type PluginPermission = "messages:read" | "settings:read" | "settings:write";
 
 export interface PluginLogger {
   debug(msg: string, ...args: unknown[]): void;
